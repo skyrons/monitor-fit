@@ -142,16 +142,19 @@ nav {
   width: 100vw;
 
   z-index: 100;
+  
 }
 
 nav .wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 
 nav.scroll {
   background: var(--primary-color);
+
 }
 
 
@@ -196,10 +199,12 @@ nav.scroll {
   margin-inline: auto;
   object-position: 0 2rem;
 }
+
 #home .stats {
   width: 100%;
   padding-block: 4rem;
   margin-inline: auto;
+  margin-top: 4rem;
 
   background-color: var(--brand-beige);
   border: 1px solid var(--brand-light);
