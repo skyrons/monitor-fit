@@ -1,0 +1,17 @@
+{
+  "users": [
+    {
+      "id": "c29b",
+      "name": "Hugo",
+      "email": "hugoteste@teste.com",
+      "password": "easyfit123",
+      "weight": 94,
+      "height": 183,
+      "age": 28,
+      "gender": "masculino",
+      "activityLevel": "ativo",
+      "neckCircumference": 40,
+      "waistCircumference": 92
+    }
+  ]
+}
