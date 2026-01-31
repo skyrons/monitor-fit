@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
 import type { User } from '../services/api';
 import { api } from '../services/api';
@@ -22,7 +22,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       try {
         const parsedUser = JSON.parse(storedUser);
         setUser(parsedUser);
-      } catch (error) {
+      } catch {
         localStorage.removeItem('user');
       }
     }
@@ -39,7 +39,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return false;
     } catch (error) {
       console.error('Erro ao fazer login:', error);
-      return false;
+      throw error;
     }
   };
 

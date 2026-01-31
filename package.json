@@ -1,5 +1,5 @@
 {
-  "name": "portifolio-hugo",
+  "name": "monitor-fit",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -8,13 +8,14 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "server": "json-server --watch db.json --port 3001"
+    "server": "json-server --watch db.json --port 3001",
+    "parse-taco": "node scripts/parse-taco.js"
   },
   "dependencies": {
-    "i": "^0.3.7",
     "phosphor-react": "^1.4.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "react-router-dom": "^7.13.0",
     "scrollreveal": "^4.0.9",
     "styled-components": "^6.1.19"
   },

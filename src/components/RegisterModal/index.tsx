@@ -144,7 +144,9 @@ export function RegisterModal({ isOpen, onClose }: RegisterModalProps) {
       await login(newUser.email, formData.password as string);
       onClose();
     } catch (error) {
-      setError('Erro ao criar conta. Tente novamente.');
+      setError(
+        error instanceof Error ? error.message : 'Erro ao criar conta. Tente novamente.'
+      );
       console.error(error);
     }
   };

@@ -1,5 +1,7 @@
-import { Home } from "./components/Home"; 
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home } from "./components/Home";
 import { Header } from "./components/Header";
+import { BuscarAlimentos } from "./components/BuscarAlimentos";
 import { AuthProvider } from "./contexts/AuthContext";
 
 import { ThemeProvider } from "styled-components";
@@ -11,8 +13,13 @@ export default function App() {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <AuthProvider>
-        <Header />
-        <Home />
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/buscar-alimentos" element={<BuscarAlimentos />} />
+          </Routes>
+        </BrowserRouter>
       </AuthProvider>
     </ThemeProvider>
   );

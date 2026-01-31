@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useAuth } from '../../contexts/AuthContext';
 import { LoginContainer, FormGroup, Input, Button, RegisterLink, ErrorMessage } from './styles';
 
@@ -21,9 +21,13 @@ export function Login({ onOpenRegister }: LoginProps) {
       return;
     }
 
-    const success = await login(email, password);
-    if (!success) {
-      setError('Email ou senha incorretos');
+    try {
+      const success = await login(email, password);
+      if (!success) {
+        setError('Email ou senha incorretos');
+      }
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Erro ao conectar. Execute: npm run server');
     }
   };
 

@@ -4,6 +4,7 @@ import { useAuth } from "../../contexts/AuthContext";
 import { Login } from "../Login";
 import { RegisterModal } from "../RegisterModal";
 import { UpdateProfileModal } from "../UpdateProfileModal";
+import { ElaborarRefeicoes } from "../ElaborarRefeicoes";
 import { calculateBMR, calculateBodyFatPercentage } from "../../utils/calculations";
 import sr from '../../utils/scrollreveal'
 
@@ -138,6 +139,8 @@ export function Home(){
       ) : (
         <Login onOpenRegister={() => setIsRegisterModalOpen(true)} />
       )}
+
+      {user && <ElaborarRefeicoes />}
 
       <RegisterModal 
         isOpen={isRegisterModalOpen} 

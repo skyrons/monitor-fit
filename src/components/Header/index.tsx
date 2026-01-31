@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { User, House, SignOut, UserCircle } from 'phosphor-react';
 import { useAuth } from '../../contexts/AuthContext';
-import { HeaderContainer, ProfileIcon, Dropdown, DropdownItem, HomeIcon } from './styles';
+import { HeaderContainer, NavCenter, NavLink, ProfileIcon, Dropdown, DropdownItem, HomeIcon } from './styles';
 
 export function Header() {
   const { user, logout } = useAuth();
@@ -28,9 +29,14 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <HomeIcon onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
+      <HomeIcon as={Link} to="/" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
         <House size={32} weight="fill" />
       </HomeIcon>
+      <NavCenter>
+        <NavLink as={Link} to="/buscar-alimentos">
+          Buscar alimentos
+        </NavLink>
+      </NavCenter>
       <ProfileIcon onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
         <UserCircle size={32} weight="fill" />
         {isDropdownOpen && (

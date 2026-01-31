@@ -15,6 +15,27 @@ export const HeaderContainer = styled.header`
   z-index: 1000;
 `;
 
+export const NavCenter = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+`;
+
+export const NavLink = styled.a`
+  color: ${props => props.theme['bg-golden']};
+  text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: filter 0.2s;
+
+  &:hover {
+    filter: brightness(0.8);
+    text-decoration: underline;
+  }
+`;
+
 export const ProfileIcon = styled.div`
   position: relative;
   cursor: pointer;
